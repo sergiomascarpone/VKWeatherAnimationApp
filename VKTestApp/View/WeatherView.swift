@@ -94,9 +94,9 @@ class WeatherView: UIView {
     private func addStormAnimation() {
         // Example: Add storm animation with rain and lightning
         let lightningLayer = CAEmitterLayer()
-//        lightningLayer.emitterShape = .circle
+        //lightningLayer.emitterShape = .circle
         lightningLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
-        //        lightningLayer.emitterSize = CGSize(width: bounds.width, height: 1)
+        //lightningLayer.emitterSize = CGSize(width: bounds.width, height: 1)
         
         let lightningCell = CAEmitterCell()
         lightningCell.birthRate = 10
@@ -113,9 +113,9 @@ class WeatherView: UIView {
     private func addFogAnimation() {
         // Example: Add fog animation
         let fogLayer = CAEmitterLayer()
-//        fogLayer.emitterShape = .circle
+        //fogLayer.emitterShape = .circle
         fogLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
-        //        fogLayer.emitterSize = CGSize(width: bounds.width, height: 1)
+        //fogLayer.emitterSize = CGSize(width: bounds.width, height: 1)
         
         let fogLayerCell = CAEmitterCell()
         fogLayerCell.birthRate = 10

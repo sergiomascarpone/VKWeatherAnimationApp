@@ -78,7 +78,6 @@ extension WeatherViewController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 
-
 //import UIKit
 //
 //class WeatherAnimationViewController: UIViewController {
