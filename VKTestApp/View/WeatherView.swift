@@ -56,7 +56,7 @@ class WeatherView: UIView {
         //            width: sunSize.width,
         //            height: sunSize.height
         //        )
-//        sunLayer.emitterShape = .circle
+        //sunLayer.emitterShape = .circle
         sunLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
         //sunLayer.emitterSize = CGSize(width: bounds.width, height: 1)
         
@@ -75,9 +75,9 @@ class WeatherView: UIView {
     private func addRainAnimation() {
         // Example: Add rain animation
         let rainLayer = CAEmitterLayer()
-//        rainLayer.emitterShape = .circle
+        //rainLayer.emitterShape = .circle
         rainLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
-        //        rainLayer.emitterSize = CGSize(width: bounds.width, height: 1)
+        //rainLayer.emitterSize = CGSize(width: bounds.width, height: 1)
         
         let rainCell = CAEmitterCell()
         rainCell.birthRate = 10
