@@ -11,6 +11,9 @@ class WeatherViewModel {
     let weathers: [Weather] = [
         Weather(type: .clear),
         Weather(type: .rain),
+        Weather(type: .wind),
+        Weather(type: .snow),
+        Weather(type: .cloudy),
         Weather(type: .storm),
         Weather(type: .fog)
     ]

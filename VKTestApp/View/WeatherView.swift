@@ -9,7 +9,7 @@ import UIKit
 
 class WeatherView: UIView {
     
-    var weatherType: WeatherType = .storm {
+    var weatherType: WeatherType = .wind {
         didSet {
             updateView()
         }
@@ -39,24 +39,23 @@ class WeatherView: UIView {
             addClearAnimation()
         case .rain:
             addRainAnimation()
-        case .storm:
-            addStormAnimation()
+        case .wind:
+            addWindAnimation()
         case .fog:
             addFogAnimation()
+        case .snow:
+            addSnowAnimation()
+        case .cloudy:
+            addCloudyAnimation()
+        case .storm:
+            addStormAnimation()
         }
     }
     
+    //MARK: Weather Animation
     private func addClearAnimation() {
         // Example: Add sun animation
         let sunLayer = CAEmitterLayer()
-        //        let sunSize = CGSize(width: 100, height: 100)
-        //        sunLayer.frame = CGRect(
-        //            x: (bounds.width-sunSize.width) / 2,
-        //            y: (bounds.height - sunSize.height) / 2,
-        //            width: sunSize.width,
-        //            height: sunSize.height
-        //        )
-        //sunLayer.emitterShape = .circle
         sunLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
         //sunLayer.emitterSize = CGSize(width: bounds.width, height: 1)
         
@@ -66,7 +65,7 @@ class WeatherView: UIView {
         sunCell.velocity = 250
         sunCell.scale = 0.1
         sunCell.emissionRange = .pi
-        sunCell.contents = UIImage(named: "sunImage")?.cgImage
+        sunCell.contents = UIImage(named: "sunImg")?.cgImage
         
         sunLayer.emitterCells = [sunCell]
         animationLayer.addSublayer(sunLayer)
@@ -75,9 +74,7 @@ class WeatherView: UIView {
     private func addRainAnimation() {
         // Example: Add rain animation
         let rainLayer = CAEmitterLayer()
-        //rainLayer.emitterShape = .circle
         rainLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
-        //rainLayer.emitterSize = CGSize(width: bounds.width, height: 1)
         
         let rainCell = CAEmitterCell()
         rainCell.birthRate = 10
@@ -85,18 +82,17 @@ class WeatherView: UIView {
         rainCell.velocity = 250
         rainCell.scale = 0.1
         rainCell.emissionRange = .pi
-        rainCell.contents = UIImage(named: "rainDrop")?.cgImage
+        rainCell.contents = UIImage(named: "rainDropImg")?.cgImage
         
         rainLayer.emitterCells = [rainCell]
         animationLayer.addSublayer(rainLayer)
     }
     
-    private func addStormAnimation() {
+    private func addWindAnimation() {
         // Example: Add storm animation with rain and lightning
         let lightningLayer = CAEmitterLayer()
         //lightningLayer.emitterShape = .circle
         lightningLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
-        //lightningLayer.emitterSize = CGSize(width: bounds.width, height: 1)
         
         let lightningCell = CAEmitterCell()
         lightningCell.birthRate = 10
@@ -104,7 +100,7 @@ class WeatherView: UIView {
         lightningCell.velocity = 250
         lightningCell.scale = 0.1
         lightningCell.emissionRange = .pi
-        lightningCell.contents = UIImage(named: "lightning")?.cgImage
+        lightningCell.contents = UIImage(named: "windImg")?.cgImage
         
         lightningLayer.emitterCells = [lightningCell]
         animationLayer.addSublayer(lightningLayer)
@@ -123,10 +119,61 @@ class WeatherView: UIView {
         fogLayerCell.velocity = 250
         fogLayerCell.scale = 0.1
         fogLayerCell.emissionRange = .pi
-        fogLayerCell.contents = UIImage(named: "fogImage")?.cgImage
+        fogLayerCell.contents = UIImage(named: "fogImg")?.cgImage
         
         fogLayer.emitterCells = [fogLayerCell]
         animationLayer.addSublayer(fogLayer)
+    }
+    
+    private func addSnowAnimation() {
+        // Example: Add snow animation
+        let snowLayer = CAEmitterLayer()
+        snowLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
+        
+        let snowCell = CAEmitterCell()
+        snowCell.birthRate = 10
+        snowCell.lifetime = 10.0
+        snowCell.velocity = 250
+        snowCell.scale = 0.1
+        snowCell.emissionRange = .pi
+        snowCell.contents = UIImage(named: "snowImg")?.cgImage
+        
+        snowLayer.emitterCells = [snowCell]
+        animationLayer.addSublayer(snowLayer)
+    }
+    
+    private func addCloudyAnimation() {
+        // Example: Add cloudy animation
+        let cloudyLayer = CAEmitterLayer()
+        cloudyLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
+        
+        let cloudyCell = CAEmitterCell()
+        cloudyCell.birthRate = 10
+        cloudyCell.lifetime = 10.0
+        cloudyCell.velocity = 250
+        cloudyCell.scale = 0.1
+        cloudyCell.emissionRange = .pi
+        cloudyCell.contents = UIImage(named: "cloudyImg")?.cgImage
+        
+        cloudyLayer.emitterCells = [cloudyCell]
+        animationLayer.addSublayer(cloudyLayer)
+    }
+    
+    private func addStormAnimation() {
+        // Example: Add storm animation
+        let stormLayer = CAEmitterLayer()
+        stormLayer.emitterPosition = CGPoint(x: bounds.midX, y: bounds.midY)
+        
+        let stormCell = CAEmitterCell()
+        stormCell.birthRate = 10
+        stormCell.lifetime = 10.0
+        stormCell.velocity = 250
+        stormCell.scale = 0.1
+        stormCell.emissionRange = .pi
+        stormCell.contents = UIImage(named: "stormImg")?.cgImage
+        
+        stormLayer.emitterCells = [stormCell]
+        animationLayer.addSublayer(stormLayer)
     }
     
     override func layoutSubviews() {
