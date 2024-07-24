@@ -27,6 +27,7 @@ class WeatherViewController: UIViewController {
         layout.itemSize = CGSize(width: 100, height: 50)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(WeatherCell.self, forCellWithReuseIdentifier: WeatherCell.reuseIdentifier)
+        collectionView.backgroundColor = .cyan
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
